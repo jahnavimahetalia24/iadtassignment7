@@ -44,5 +44,5 @@ def create_ec2_instances(assign):
     )
     print(response)
 
-assign = boto3.client('autoscaling','us-east-1')
+assign = boto3.client('autoscaling',region_name='us-east-1')
 create(assign)
