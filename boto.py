@@ -7,7 +7,7 @@ ec2 = boto3.resource('ec2')
 #ImageId : It is an Amazon Machine Image (AMI) id. When we create an EC2 instance the first step is to select AMI id. 
 #And it changes according to the region you choose. Here I am using ap-south-1 (Mumbai Region). 
 
-def create(assign):
+def create_launch_configuration(assign):
     USER_DATA = '''
     #!/bin/bash
 sudo apt update
@@ -16,7 +16,7 @@ sudo systemctl start apache2
 sudo systemctl enable apache2
     '''
     
-    launch = assign.create(
+    launch = assign.create_launch_configuration(
         LaunchConfigurationName="jahnavi24",
         KeyName="iadtassignment7",
         UserData=USER_DATA,
@@ -45,4 +45,4 @@ def create_ec2_instances(assign):
     print(response)
 
 assign = boto3.client('autoscaling',region_name='us-east-1')
-create(assign)
+create_launch_configuration(assign)
