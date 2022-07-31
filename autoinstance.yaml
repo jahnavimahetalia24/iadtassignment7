@@ -1,0 +1,11 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Automate creation of EC2 instance using CloudFormation
+
+Resources:
+    WebAppInstance:
+        Type: AWS::EC2::Instance
+        Properties:
+            ImageId: ami-0d5eff06f840b45e9
+            InstanceType: t2.micro
+
+# aws cloudformation create-stack --stack-name ec2-example --template-body file://q2.yaml
