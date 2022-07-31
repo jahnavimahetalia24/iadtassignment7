@@ -1,11 +1,8 @@
 AWSTemplateFormatVersion: 2010-09-09
-Description: Automate creation of EC2 instance using CloudFormation
-
+Description: Use cloudformation to automate instance creation
 Resources:
     WebAppInstance:
-        Type: AWS::EC2::Instance
+        Type: AWS::EC2::Instance #type of instance here is AWS EC2
         Properties:
-            ImageId: ami-0d5eff06f840b45e9
-            InstanceType: t2.micro
-
-# aws cloudformation create-stack --stack-name ec2-example --template-body file://q2.yaml
+            ImageId: ami-0d5eff06f840b45e9 #instance id
+            InstanceType: t2.micro #indicates the machine's specifications
